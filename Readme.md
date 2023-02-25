@@ -1,0 +1,3 @@
+In this code, the plagiarism_detector() function prompts the user to enter the two texts they want to compare, removes special characters and extra spaces from the text, sends a request to OpenAI's GPT-3 language model to compare the similarity between the two texts, and then checks the similarity score to determine whether plagiarism has been detected. Finally, the function prints the result to the console.
+
+To run this code, make sure you replace YOUR_API_KEY with your actual OpenAI API key. Then, simply run the code in a Python environment, and follow the prompts to enter the two texts you want to compare.
