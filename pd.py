@@ -4,7 +4,11 @@ import re
 # Set up OpenAI API credentials
 openai.api_key = "YOUR_API_KEY"
 
-def plagiarism_detector(original_text, suspect_text):
+def plagiarism_detector():
+    # Prompt user to enter the two texts to compare
+    original_text = input("Enter the original text: ")
+    suspect_text = input("Enter the suspect text: ")
+
     # Remove special characters and extra spaces from the text
     original_text = re.sub('[^a-zA-Z0-9 \n\.]', '', original_text)
     suspect_text = re.sub('[^a-zA-Z0-9 \n\.]', '', suspect_text)
@@ -22,6 +26,9 @@ def plagiarism_detector(original_text, suspect_text):
     # Check the similarity score and return the result
     similarity_score = float(response.choices[0].text.strip())
     if similarity_score > 0.8:
-        return "Plagiarism detected!"
+        print("Plagiarism detected!")
     else:
-        return "No plagiarism detected."
+        print("No plagiarism detected.")
+
+# Call the plagiarism detector function
+plagiarism_detector()
